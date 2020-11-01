@@ -1,0 +1,25 @@
+{
+  "name": "@vladimir-vovk/react-native-toast",
+  "version": "1.0.0",
+  "description": "React Native toast library for both iOS and Android",
+  "main": "index.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "react-native",
+    "toast"
+  ],
+  "author": "Vladimir Vovk",
+  "license": "MIT",
+  "homepage": "https://github.com/vladimir-vovk/",
+  "dependencies": {},
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vladimir-vovk/react-native-toast.git"
+  },
+  "bugs": {
+    "url": "https://github.com/vladimir-vovk/react-native-toast/issues"
+  }
+}
