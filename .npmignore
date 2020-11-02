@@ -5,5 +5,8 @@ npm-debug.log
 # Dependency directory
 node_modules
 
+# Demo directory
+demo
+
 # Runtime data
 tmp
