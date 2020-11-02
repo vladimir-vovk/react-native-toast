@@ -44,8 +44,8 @@ const Demo = () => {
 ...
 ```
 
-See [Demo]() for more details.
+See [Demo App](https://github.com/vladimir-vovk/react-native-toast/blob/master/demo/App.tsx) for more details.
 
 ## Expo
 
-You could run demo with [Expo Client](https://expo.io/@vladimir_vovk/) or [Expo Snack](https://snack.expo.io/) in your browser.
+You could run demo with [Expo Client](https://expo.io/@vladimir_vovk/projects/demo) or [Expo Snack](https://snack.expo.io/@vladimir_vovk/react-native-toast-demo) in your browser.

@@ -1,7 +1,8 @@
 {
   "expo": {
-    "name": "demo",
-    "slug": "demo",
+    "name": "react-native-toast-demo",
+    "slug": "react-native-toast-demo",
+    "description": "Demo project for the @vladimir-vovk/react-native-toast library",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -13,9 +14,7 @@
     "updates": {
       "fallbackToCacheTimeout": 0
     },
-    "assetBundlePatterns": [
-      "**/*"
-    ],
+    "assetBundlePatterns": ["**/*"],
     "ios": {
       "supportsTablet": true
     },
