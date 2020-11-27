@@ -48,4 +48,4 @@ See [Demo App](https://github.com/vladimir-vovk/react-native-toast/blob/master/d
 
 ## Expo
 
-You could run demo with [Expo Client](https://expo.io/@vladimir_vovk/projects/react-native-toast-demo) or [Expo Snack](https://snack.expo.io/@vladimir_vovk/react-native-toast-demo) in your browser.
+You could run demo with [Expo Client](https://expo.io/@vladimir_vovk/projects/react-native-toast-demo) or [Expo Snack](https://snack.expo.io/@vladimir_vovk/react-native-toast-demo-snack) in your browser.
