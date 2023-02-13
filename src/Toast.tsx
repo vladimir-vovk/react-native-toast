@@ -1,18 +1,12 @@
-import React, {
-  ReactElement,
-  useEffect,
-  useRef,
-  useCallback,
-  useState
-} from 'react'
+import React, { ReactElement, useCallback, useEffect, useRef, useState } from 'react'
 import { Animated, StyleSheet, Text, View } from 'react-native'
+
 import { useToast } from './useToast'
 
 const styles = StyleSheet.create({
   container: {
     alignSelf: 'center',
     position: 'absolute',
-    bottom: 64,
     marginHorizontal: 20,
     maxWidth: 480
   },
@@ -28,7 +22,6 @@ const styles = StyleSheet.create({
   }
 })
 
-const FADE_DURATION = 300
 const MOVE_DURATION = 8
 
 export const Toast = (): ReactElement => {
@@ -37,16 +30,17 @@ export const Toast = (): ReactElement => {
   const translateY = useRef(new Animated.Value(0)).current
   const timer = useRef<number>()
   const [isVisible, setVisible] = useState(false)
+  const duration = toast.animationDuration
 
   const fadeIn = useCallback(() => {
     Animated.timing(opacity, {
       toValue: 1,
-      duration: FADE_DURATION,
+      duration,
       useNativeDriver: true
     }).start()
     Animated.timing(translateY, {
-      toValue: -MOVE_DURATION,
-      duration: FADE_DURATION,
+      toValue: (toast.top ? -1 : 1) * MOVE_DURATION,
+      duration,
       useNativeDriver: true
     }).start()
   }, [opacity])
@@ -54,12 +48,12 @@ export const Toast = (): ReactElement => {
   const fadeOut = useCallback(() => {
     Animated.timing(opacity, {
       toValue: 0,
-      duration: FADE_DURATION,
+      duration,
       useNativeDriver: true
     }).start(() => hideToast())
     Animated.timing(translateY, {
       toValue: 0,
-      duration: FADE_DURATION,
+      duration,
       useNativeDriver: true
     }).start()
   }, [opacity, hideToast])
@@ -91,10 +85,14 @@ export const Toast = (): ReactElement => {
 
   return (
     <Animated.View
-      style={[styles.container, { opacity, transform: [{ translateY }] }]}
+      style={[
+        styles.container,
+        toast.top ? { top: toast.top } : { bottom: toast.bottom },
+        { opacity, transform: [{ translateY }] }
+      ]}
     >
-      <View style={styles.toast}>
-        <Text style={styles.message}>{message}</Text>
+      <View style={[styles.toast, toast.containerStyle]}>
+        <Text style={[styles.message, toast.textStyle]}>{message}</Text>
       </View>
     </Animated.View>
   )
